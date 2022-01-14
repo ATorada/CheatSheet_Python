@@ -1,3 +1,14 @@
+"""
+~~ Practicando Input/Output en Python~~
+~~ Ángel Torada ~~
+"""
+
+
+
+#~~ Input por consola ~~
+
+
+
 #El Input en python es bastante sencillo, hay dos maneras de realizarlo
 #raw_input() o input(). Depende de la versión funcionará uno u otro. El Raw se usa en la 2.7 y el Input en la 3.6 (De normal)
 
@@ -9,9 +20,12 @@ print(frase)
 #print(frase)
 
 
+#~~ Tratado de archivos (Lectura y escritura) ~~
+
 #Igualmente esto es para la introducción de datos por consola ¿Qué pasa si queremos leer y escribir un archivo?
 #Para ello usaremos la sentencia open() en esta se incluirá el archivo y el modo (r para leer, a para append, w para escribir y x para crear)
 #También se puede indicar si será tratado como binario(b) o como texto(t) [Por defecto]
+
 
 f = open("C:\\Users\\Sabiin\\Desktop\\PythonRepaso\\InputOutput\\archivo.txt", "rt") #Sin ningún parámetro lo abriremos solo de lectura
 print(f.read())
@@ -47,6 +61,8 @@ f = open("C:\\Users\\Sabiin\\Desktop\\PythonRepaso\\InputOutput\\archivo.txt", "
 f.write("Lo he borrado todo :(")
 f.close()
 
+
+# ~~ Crear y borrar archivos ~~
 
 #En caso de que queramos crear un nuevo archivo usaremos la siguiente sintaxis
 #Lo crea vacío

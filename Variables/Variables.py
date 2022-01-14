@@ -1,9 +1,9 @@
 """
-~~ Practicando variables en Python~~
+~~ Practicando variables en Python ~~
 ~~ Ángel Torada ~~
 """
 
-#~~Visibilidad~~
+#~~ Visibilidad ~~
     #Todas las variables definidas fuera de una función son globales
 #~~Tipos~~
     #int, float, str y bool
@@ -36,7 +36,9 @@ print(orange)
 print(banana)
 print(cherry)
 
-#~~Colecciones~~
+
+
+#~~ Colecciones ~~
 
 
     #Diccionarios (Unordered y con Key-Values)

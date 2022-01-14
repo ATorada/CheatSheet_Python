@@ -1,3 +1,11 @@
+"""
+~~ Practicando Funciones en Python~~
+~~ Ángel Torada ~~
+"""
+
+
+#~~ Definición básica de funciones CON y SIN parámetros ~~
+
 #La manera de definir funciones es con: def [Nombre de la funcion]():
 #No se pueden crear funciones sin código, para que esto sea posible pondremos el statement pass dentro de la función para que no quede vacía 
 def Hola_Mundo():
@@ -13,11 +21,22 @@ def Hola_Nombre(nombre):
 
 Hola_Nombre("Ángel")
 
+
+    #~~ Parámetros múltiples ~~
+
+
+
+      #Sobrecarga de parámetros
+
 #Si se exceden pasando argumentos podremos usar el prefijo * sobre el parámetro y acceder a él como una TUPLA
 def Hola_Nombres(*nombres):
   print("Hola, en específico, a: " + nombres[2])
 
 Hola_Nombres("Ángel", "Cristian", "Iván")
+
+
+
+      #Nombrar parámetro en la llamada de la función
 
 #Si usamos varios argumentos, a la hora de llamar a la Función podremos especificar cada uno (Keywords or Kwargs)
 def Hola_Nombres_Especificos(nombre1, nombre2, nombre3):
@@ -25,18 +44,30 @@ def Hola_Nombres_Especificos(nombre1, nombre2, nombre3):
 
 Hola_Nombres_Especificos(nombre3 = "Ángel", nombre2 = "Cristian", nombre1 = "Iván")
 
+
+      #Sobrecarga de parámetros con KeyWords
+
 #Si no sabemos la cantidad de Keywords que nos pasarán podremos especificar cual queremos mostrar con **. (Como un diccionario)
 def Hola_MuchosNombres(**Nombres):
     print("Hola, en específico, a: " + Nombres["nombre1"])
     
 Hola_MuchosNombres(nombre1="Ángel", nombre2="Cristian")
 
-#Si llaman a la función SIN parámetro podremos establecer uno por defecto con =
+
+
+
+#~~ Parámetros por defecto ~~
+
+#Si llaman a la función SIN parámetro podremos establecer uno por defecto con = (Polimorfismo)
 def Hola_Nombre(nombre = "David"):
     print("Hola "+ nombre)
 
 Hola_Nombre("Ángel")
 Hola_Nombre()
+
+
+
+#~~ Parámetros con return ~~
 
 #Para crear una función que retorne algo tendremos que usar return
 def suma(val1):
@@ -46,7 +77,11 @@ print(suma(2))
 
 
 
-#Recursividad 
+
+
+#~~ Recursividad ~~
+
+
 #La recursividad es un tema complejo, pero podemos pensar que es un bucle, tiene un condicional que implica el fin, sino, se repite.
 #En este ejemplo he pensado en un Gato que quiere comer, nosotros sabemos que el gato está a 10 pasos de su comida
 #Si hicieramos un bucle le diríamos que se repitiera 10 veces el caminar hasta que llegase a su comida
@@ -62,7 +97,10 @@ VaAComer(10)
 
 
 
-#Lambda 
+#~~ Lambda ~~
+
+
+
 #Las Lambda son funciones anónimas que solo aceptan una expresión, pero es una manera sencilla de realizar una función en una línea
 #Por ejemplo, queremos crear una función de suma, para crearla usaríamos la plantilla [Nombre de la funcion] = lambda [Argumentos] : [Expresion]
 sumaLambda = lambda a, b : a + b

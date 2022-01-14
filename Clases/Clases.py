@@ -1,9 +1,19 @@
+"""
+~~ Practicando clases en Python~~
+~~ Ángel Torada ~~
+"""
+
+
+
+#~~ Clase básica con métodos, constructor y toString ~~
+
 #La manera de definir clases en Python es con: class [Nombre de la clase]:
 class Globo:
     #Para defininir su constructor se usa __init__ y como mínimo el parámetro self (Se refiere a la instancia del objeto)
     #Para llamar a un atributo de la instancia usamos self.[Nombre del atributo]
+    #El encapsulamiento de los atributos es automático, no tendremos que indicar nosotros su visibilidad.
     #El parámetro self se puede nombrar al gusto, pero es OBLIGATORIO
-    #También es posible aplicar un valor por default igual que en las funciones al poner atributo = "valor" (Ejemplo con color) 
+    #También es posible aplicar un valor por default (Polimorfismo en caso de los métodos) igual que en las funciones al poner atributo = "valor" (Ejemplo con color) 
     #Los que no tienen valores por defecto DEBEN ir antes que los que SÍ tienen
     def __init__(self,flota,color="Verde"):
         self.color = color
@@ -42,6 +52,12 @@ globo.mostrarColor
 #Si queremos borrar la instancia usaremos el statement del
 del globo
 
+
+
+
+
+#~~ Herencia de clases ~~
+
 #La herencia en clases, es sencilla de entender, simplemente tendremos que establecer como parámetro cuando definimos la clase, a la clase padre
 class GloboDeFiesta(Globo):
     #Podemos usar super() o [Nombre de la clase padre].__init__ para llamar al constructor padre y usarlo en el constructor de nuestro objeto hijo
@@ -59,6 +75,9 @@ class GloboDeFiesta(Globo):
 globoFiesta = GloboDeFiesta("Azul",False,True)
 globoFiesta.Luces()
 globoFiesta.mostrarColor()
+
+
+        #~~ Herencia múltiple ~~
 
 #También existe la herencia múltiple de clases, para ello simplemente pondremos las diferentes clases de las que hereda en los () que acompañan al nombre de la clase
 
@@ -82,7 +101,7 @@ class Gato(Animal, Alimentacion):
 Gato1 = Gato('4','Carnívoros','Pescado')
 
 
-#Ejemplo con métodos
+        #Ejemplo con métodos
 
 #En este ejemplo la clase4 hereda de la clase2 y clase3 y estas a su vez de la clase 1
 #Todas tienen el método m y en él se hace un print a parte de llamar a al método m de la clase de la que heredan
@@ -113,12 +132,33 @@ class Class4(Class3, Class2):
 obj = Class4()
 obj.m()
 
+
+
+
+
+#~~ Clases abstractas ~~
+
+#También existe la posibilidad de crear clases abstractas, es decir, clases que, si son heredadas, necesitan implementar Sí o Sí sus métodos en los hijos
+#Para ello usaremos la property  @abstractmethod incluida en el módulo ABC (Por lo que tendremos que hacer un import tanto de la propiedad como del objeto ABC)
+#Este módulo es built-in, así que no tendremos que instalarlo
+
+from abc import ABC, abstractmethod
+
+class A(ABC):
+    @abstractmethod
+    def saludo(self):
+        pass
+ 
+class B(A):
+    def saludo(self):
+        print("¡Hola!")
+
 #También hay una manera de mostrar de qué clases hereda una clase
 print(Class4.mro()) #Devolverá una lista
 print(Class4.__mro__) #Devolverá una tupla
 
 #Como información extra es posible redefinir los setters, getters y deletters de las clases con el decorator @property, abajo hay un ejemplo
-
+#Este código implica que podemos modificar el encapsulamiento de los atributos de las clases, en vez de que Python lo haga por nosotros
 class C:
     def __init__(self):
         self._x = None
@@ -143,3 +183,6 @@ c = C()
 print(c.x)
 c.x = 1
 del c.x
+
+
+

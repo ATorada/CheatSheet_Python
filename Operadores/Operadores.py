@@ -1,3 +1,9 @@
+"""
+~~ Practicando Operadores en Python~~
+~~ Ángel Torada ~~
+"""
+
+
 #Los operadores en Python disponibles son:
 
 # Arithmetic +,-,*,/,%,**(^), //
@@ -8,7 +14,9 @@ print(4/2)
 print(5%2)
 print(2**2)
 print(15//2)
- 
+
+
+
 # Reasignación =,+=,-=,*=,/=,%=,//=,**=,&=,|=,^=,>>=,<<=
 x = 5
 x += 1  #6
@@ -24,6 +32,9 @@ x **= 0 #1
 #^= Es el XOR binario
 #>>= Desplaza un Bit a la derecha
 #<<= Desplaza un Bit a la izquierda
+
+
+
 
 #Comparación ==, !=, >, <, >=, <=
 print(str(1==1))
