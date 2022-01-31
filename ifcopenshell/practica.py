@@ -36,13 +36,20 @@ print(productos_piso0)
 
 #Propiedades de la viga
 viga = productos_piso0[0]
+print("a")
 #Todos los conjuntos de propiedades
 for x in viga.IsDefinedBy:
-    print(x)
+    try:
+        print(x.RelatingPropertyDefinition)
+    except:
+        print("Nada")
 
 #Guardo el conjunto de  propiedades 1
 print()
 propiedad1 = viga.IsDefinedBy[1].RelatingPropertyDefinition
+print("a")
+print(viga.IsDefinedBy[1])
+print("a")
 print(propiedad1)
 #Mostramos las propiedades del conjunto de propiedades 1
 print(propiedad1.HasProperties)
@@ -58,11 +65,47 @@ building_elements = set()
 
 for x in file.by_type("IfcRoot"):
     if x.is_a("IfcBuildingElement"):
-        building_elements.add(x.is_a())
+        building_elements.add(x)
 
 for nombre in building_elements:
-    print(nombre)
+    print(nombre.is_a())
 
 
 
 
+count = 0
+for element in file.by_type("IfcDoor")[0].IsDefinedBy:
+    try:
+        print(element.RelatingPropertyDefinition.HasProperties)
+    except:
+        print()
+
+print(count)
+
+import ifcopenshell.util.element
+
+
+
+
+print(ifcopenshell.util.element.get_psets(file.by_type("IfcDoor")[0])['Pset_DoorCommon'])
+
+for x in ifcopenshell.util.element.get_psets(file.by_type("IfcDoor")[0]):
+
+    print()
+    for y in ifcopenshell.util.element.get_psets(file.by_type("IfcDoor")[0])[x]:
+        print(x +" " + y)
+
+print("Movida")
+
+for key, pset in ifcopenshell.util.element.get_psets(file.by_type("IfcDoor")[0]).items():
+    
+    print("         --- "+key + " --- ")
+    print()
+    for keypset, value in pset.items():
+        print("  "+keypset)
+        print("    * " + str(value) )
+    print()
+    
+print(ifcopenshell.util.element.get_container(file.by_type("IfcDoor")[0]))
+
+print(file.by_type("IfcDoor")[0].get_info())

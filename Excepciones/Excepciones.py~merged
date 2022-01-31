@@ -1,0 +1,130 @@
+<<<<<<< HEAD
+"""
+~~ Practicando excepciones en Python~~
+~~ Ángel Torada ~~
+"""
+
+
+
+#~~ Excepciones básicas ~~
+
+#Para hacer control de excepciones podemos usar las sentencias try: except:
+try:
+    print("Hola")
+except:
+    print("Error")
+    
+#Si queremos controlar una excepción en concreto simplemente tendremos que especificarla de la siguiente manera 
+
+try:
+    x = int(input("Introduzca un número: "))
+except ValueError: 
+    #except (RuntimeError, TypeError, NameError) También se permite capturar más de una excepción en un mismo except
+    #except BaseException as err: O añadir otros except (Al igual que es posible nombrar el error y posteriormente sacarlo por pantalla)
+    print("Eso no es un numero")
+
+
+
+
+#~~ Lanzando excepciones ~~
+
+#También se pueden realizar Throws de excepciones con la siguiente sentencia: raise NombreDelError('Mensaje')
+#El error debe existir, aquí hay una lista https://docs.python.org/3/library/exceptions.html
+
+try:
+    raise EOFError('Error')
+except EOFError as err:
+    print("Se ha dado un error")
+    print(err)
+
+
+
+
+#~~ Finally ~~
+
+#También hay una sentencia más en los try/except que es el Finally, este siempre se ejecuta al final del try catch
+
+try:
+  x > 3
+except:
+  print("Algo ha salido mal")
+finally:
+  print("Ha acabado el try/except")
+
+
+
+#~~ Else ~~
+
+#Por último recalcar otra sentencia más en los try/except, esta es el Else, y SOLO se ejecuta si el try ha cumplido su propósito
+
+try:
+  x > 3
+except:
+  print("Algo ha salido mal")
+else:
+=======
+"""
+~~ Practicando excepciones en Python~~
+~~ Ángel Torada ~~
+"""
+
+
+
+#~~ Excepciones básicas ~~
+
+#Para hacer control de excepciones podemos usar las sentencias try: except:
+try:
+    print("Hola")
+except:
+    print("Error")
+    
+#Si queremos controlar una excepción en concreto simplemente tendremos que especificarla de la siguiente manera 
+
+try:
+    x = int(input("Introduzca un número: "))
+except ValueError: 
+    #except (RuntimeError, TypeError, NameError) También se permite capturar más de una excepción en un mismo except
+    #except BaseException as err: O añadir otros except (Al igual que es posible nombrar el error y posteriormente sacarlo por pantalla)
+    print("Eso no es un numero")
+
+
+
+
+#~~ Lanzando excepciones ~~
+
+#También se pueden realizar Throws de excepciones con la siguiente sentencia: raise NombreDelError('Mensaje')
+#El error debe existir, aquí hay una lista https://docs.python.org/3/library/exceptions.html
+
+try:
+    raise EOFError('Error')
+except EOFError as err:
+    print("Se ha dado un error")
+    print(err)
+
+
+
+
+#~~ Finally ~~
+
+#También hay una sentencia más en los try/except que es el Finally, este siempre se ejecuta al final del try catch
+
+try:
+  x > 3
+except:
+  print("Algo ha salido mal")
+finally:
+  print("Ha acabado el try/except")
+
+
+
+#~~ Else ~~
+
+#Por último recalcar otra sentencia más en los try/except, esta es el Else, y SOLO se ejecuta si el try ha cumplido su propósito
+
+try:
+  x > 3
+except:
+  print("Algo ha salido mal")
+else:
+>>>>>>> 5cab6049fbf77a39924e686e5469c05a8a5afa83
+  print("Nada ha ido mal")

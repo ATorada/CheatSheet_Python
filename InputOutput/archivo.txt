@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 Hola
+=======
+Hola
+>>>>>>> 5cab6049fbf77a39924e686e5469c05a8a5afa83
 Adios
